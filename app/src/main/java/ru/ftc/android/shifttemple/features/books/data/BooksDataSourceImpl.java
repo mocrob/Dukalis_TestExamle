@@ -23,7 +23,7 @@ public final class BooksDataSourceImpl implements BooksDataSource {
 
     @Override
     public void getBooks(final Carry<List<Book>> carry) {
-        booksApi.getBookList(1).enqueue(new DefaultCallback(carry));
+        booksApi.getBookList().enqueue(new DefaultCallback(carry));
     }
 
     @Override

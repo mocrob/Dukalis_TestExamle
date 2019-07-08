@@ -2,5 +2,7 @@
     <string name="app_name">ShiftTemple</string>
     <string name="create_button">Создать</string>
     <string name="next_button">Далее</string>
+    <string name="CardText1">Text1</string>
+    <string name="CardText2">Text2</string>
     <string name="not_selected_user_error">Выберите пользователя</string>
 </resources>

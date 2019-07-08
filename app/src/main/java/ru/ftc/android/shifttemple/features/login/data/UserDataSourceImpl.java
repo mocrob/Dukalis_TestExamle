@@ -12,8 +12,8 @@ public final class UserDataSourceImpl implements UserDataSource {
         final List<User> userList = new ArrayList<>();
 
         userList.add(new User("1", " Петя"));
-        userList.add(new User("2", " Вася"));
-        userList.add(new User("3", " Катя"));
+        userList.add(new User("42", " Вася"));
+        userList.add(new User("43", " Катя"));
 
         return userList;
     }

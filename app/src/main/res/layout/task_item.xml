@@ -1,20 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="@dimen/offset_16">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+app:cardCornerRadius="4dp"
+android:layout_margin="4dp">
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="4dp">
+
+    <ImageView
+        android:id="@+id/imageViewCard"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="4dp" />
     <TextView
         android:id="@+id/task_item_short_description"
-        style="@style/Base.TextAppearance.AppCompat.Body2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/CardText1"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageViewCard"
+        android:layout_toRightOf="@+id/imageViewCard"/>
 
     <TextView
         android:id="@+id/task_item_full_description"
-        style="@style/Base.TextAppearance.AppCompat.Body1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/CardText2"
+        android:textStyle="italic"
+        android:textSize="15sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/task_item_short_description"
+        android:layout_toEndOf="@+id/imageViewCard"
+        android:layout_toRightOf="@+id/imageViewCard"/>
 
-</LinearLayout>
+
+</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -72,8 +72,8 @@ public final class LoginActivity extends BaseActivity implements LoginView {
     }
 
     @Override
-    public void openTaskListScreen() {
-        TaskActivity.start(this);
+    public void openTaskListScreen(User user) {
+        TaskActivity.start(this, user);
     }
 
     @Override

@@ -11,7 +11,7 @@ public interface LoginView extends MvpView {
 
     void openBookListScreen();
 
-    void openTaskListScreen();
+    void openTaskListScreen(User user);
 
     void showNotSelectedUserError();
 

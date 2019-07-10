@@ -25,9 +25,9 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        app:srcCompat="@android:drawable/ic_menu_add"
+        android:src="@drawable/plyusik"
         android:layout_gravity="bottom|end"
-        app:maxImageSize="70dp"
+        app:maxImageSize="30dp"
         android:layout_margin="10dp"
         android:translationY="-40dp"/>
 

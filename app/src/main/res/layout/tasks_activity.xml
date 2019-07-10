@@ -32,9 +32,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:srcCompat="@android:drawable/ic_input_add"
+        android:src="@drawable/plyusik"
         android:layout_gravity="bottom|end"
         android:layout_margin="10dp"
-        app:maxImageSize="70dp"/>
+        app:maxImageSize="30dp"/>
 
 </FrameLayout>

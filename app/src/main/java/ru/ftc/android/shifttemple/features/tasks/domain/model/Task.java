@@ -19,6 +19,18 @@ public final class Task {
         this.address = address;
         this.id = id;
     }
+    public Task(String descriptionShort, String descriptionFull, String address)
+    {
+        this.descriptionShort = descriptionShort;
+        this.descriptionFull = descriptionFull;
+        this.address = address;
+        this.createDataTime = null;
+        this.employer = null;
+        this.executor = null;
+        this.id = 0;
+        this.status = null;
+        this.updateDateTime = null;
+    }
     public Task(String address, String createDataTime, String descriptionFull, String descriptionShort,
                 User employer, User executor, int id, String status, String updateDateTime) {
         this.address = address;

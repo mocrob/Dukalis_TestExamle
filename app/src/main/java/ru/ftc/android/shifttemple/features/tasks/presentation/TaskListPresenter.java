@@ -78,6 +78,9 @@ final class TaskListPresenter extends MvpPresenter<TaskListView> {
 
     private final AtomicInteger atomicInteger = new AtomicInteger();
 
+    public void onOpenCreateTaskClicked(){
+        view.openCreateTaskScreen();
+    }
     public void onCreateTaskClicked(){
         /*code bellow is fake, change to call create task activity and more*/
         int id = atomicInteger.incrementAndGet();

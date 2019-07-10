@@ -14,4 +14,6 @@ public interface TaskListView extends MvpView {
     void showTaskList(List<Task> list);
 
     void showError(String message);
+
+    void openCreateTaskScreen();
 }

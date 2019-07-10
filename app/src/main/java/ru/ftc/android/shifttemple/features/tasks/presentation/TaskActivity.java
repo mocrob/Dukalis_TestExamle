@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.List;
 
 import ru.ftc.android.shifttemple.R;
@@ -47,6 +49,14 @@ public final class TaskActivity extends BaseActivity implements TaskListView {
         progressBar = findViewById(R.id.tasks_progress);
         recyclerView = findViewById(R.id.tasks_recycle_view);
         createTaskButton = findViewById(R.id.task_create_button);
+        final FloatingActionButton floatingActionButton = findViewById(R.id.create_task_fab);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.onOpenCreateTaskClicked();
+            }
+        });
 
         createTaskButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,5 +107,10 @@ public final class TaskActivity extends BaseActivity implements TaskListView {
     @Override
     public void showError(String message) {
         Toast.makeText(this,message,Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void openCreateTaskScreen() {
+        CreateTaskActivity.start(this);
     }
 }

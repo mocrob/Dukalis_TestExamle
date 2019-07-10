@@ -62,8 +62,14 @@ public final class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHold
         }
 
         void bind(final Task task){
+            String toPrint = task.getDescriptionFull();
             shortDescriptionView.setText(task.getDescriptionShort());
-            longDescriptionView.setText(task.getDescriptionFull());
+            if(toPrint.length()>20)
+            {
+                toPrint = toPrint.substring(0,17);
+                toPrint+="...";
+            }
+            longDescriptionView.setText(toPrint);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

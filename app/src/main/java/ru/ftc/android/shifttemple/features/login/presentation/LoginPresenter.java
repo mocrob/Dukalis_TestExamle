@@ -34,6 +34,10 @@ public final class LoginPresenter extends MvpPresenter<LoginView> {
         });
     }
 
+    void onCreateUserClick()
+    {
+        view.openCreateUserScreen();
+    }
     void onNavigateNextClick(User selectedUser) {
         if (selectedUser == null) {
             view.showNotSelectedUserError();

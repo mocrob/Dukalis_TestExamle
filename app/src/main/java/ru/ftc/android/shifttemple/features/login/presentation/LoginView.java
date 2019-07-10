@@ -14,4 +14,6 @@ public interface LoginView extends MvpView {
     void openTaskListScreen();
 
     void showNotSelectedUserError();
+
+    void openCreateUserScreen();
 }

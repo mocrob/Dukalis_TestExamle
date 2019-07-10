@@ -6,6 +6,7 @@ import ru.ftc.android.shifttemple.features.MvpPresenter;
 import ru.ftc.android.shifttemple.features.login.domain.SessionInteractor;
 import ru.ftc.android.shifttemple.features.login.domain.UserInteractor;
 import ru.ftc.android.shifttemple.features.login.domain.model.User;
+import ru.ftc.android.shifttemple.network.Carry;
 
 public final class LoginPresenter extends MvpPresenter<LoginView> {
 
@@ -19,15 +20,25 @@ public final class LoginPresenter extends MvpPresenter<LoginView> {
 
     @Override
     protected void onViewReady() {
-        final List<User> userList = userInteractor.getUserList();
-        view.showUserList(userList);
+        //final List<User> userList = userInteractor.getUserList();
+         userInteractor.loadUsers(new Carry<List<User>>() {
+            @Override
+            public void onSuccess(List<User> result) {
+                view.showUserList(result);
+            }
+
+            @Override
+            public void onFailure(Throwable throwable) {
+                view.showNotSelectedUserError();
+            }
+        });
     }
 
     void onNavigateNextClick(User selectedUser) {
         if (selectedUser == null) {
             view.showNotSelectedUserError();
         } else {
-            sessionInteractor.setSessionId(selectedUser.getSessionId());
+            sessionInteractor.setSessionId(String.valueOf(selectedUser.getId()));
             view.openTaskListScreen();
         }
     }

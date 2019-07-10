@@ -65,7 +65,7 @@ public final class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHold
         }
 
         void bind(final User user) {
-            userNameView.setText(user.getName());
+            userNameView.setText(user.getFirstName());
             radioButton.setChecked(user == selectedUser);
 
             itemView.setOnClickListener(new View.OnClickListener() {

@@ -13,10 +13,15 @@ public final class User {
     public String type;
     public String roles;
     public String contacts;
-
-    public User(String sessionId, String name) {
+    public String firstName;
+    public int id;
+   /*public User(String sessionId, String name) {
         this.sessionId = sessionId;
         this.name = name;
+    }*/
+
+    public int getId() {
+        return id;
     }
 
     public String getSessionId() {
@@ -29,9 +34,7 @@ public final class User {
 
     public User(int id, String username, String firstName, String lastName, String email,
                 int age, String city, int karma, String type, String roles, String contacts) {
-        this.sessionId = String.valueOf(id);
         this.username = username;
-        this.name = firstName;
         this.lastName = lastName;
         this.email = email;
         this.age = age;
@@ -40,6 +43,14 @@ public final class User {
         this.type = type;
         this.roles = roles;
         this.contacts = contacts;
+        this.firstName=firstName;
+        this.id = id;
+        this.name = this.firstName;
+        this.sessionId = String.valueOf(this.id);
+    }
+
+    public String getFirstName() {
+        return firstName;
     }
 
     public String getUsername() {

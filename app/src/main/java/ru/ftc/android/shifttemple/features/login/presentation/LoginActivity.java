@@ -83,7 +83,7 @@ public final class LoginActivity extends BaseActivity implements LoginView {
 
     @Override
     public void openCreateUserScreen() {
-
+        CreateUserActivity.start(this);
     }
 
     @Override

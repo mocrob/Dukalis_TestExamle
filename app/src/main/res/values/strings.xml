@@ -7,5 +7,13 @@
     <string name="CreateTaskText">Создать задачу</string>
     <string name="ShortDeskPlaceText">Краткое описание</string>
     <string name="FullDeskPlaceText">Полное описание</string>
+    <string name="agePlaceText">Возраст</string>
+    <string name="cityPlaceText">Город</string>
+    <string name="contactsPlaceText">+79000000000</string>
+    <string name="emailPlaceText">ivan@ivanov.ru</string>
+    <string name="firstnamePlaceText">Имя</string>
+    <string name="lastnamePlaceText">Фамилия</string>
+    <string name="usernamePlaceText">Логин</string>
+    <string name="CreateNewUserText">Регистрация</string>
     <string name="not_selected_user_error">Выберите пользователя</string>
 </resources>

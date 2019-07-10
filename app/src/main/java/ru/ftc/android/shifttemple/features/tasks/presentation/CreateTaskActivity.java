@@ -48,6 +48,8 @@ public final class CreateTaskActivity extends BaseActivity implements CreateTask
 
                 Task task = new Task(String.valueOf(shortDesc.getText()),String.valueOf(fullDesc.getText()),Intent.EXTRA_TEXT);
                 presenter.createTask(task);
+                shortDesc.setText("");
+                fullDesc.setText("");
 
             }
         });

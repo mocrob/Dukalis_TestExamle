@@ -49,6 +49,17 @@ public final class User {
         this.sessionId = String.valueOf(this.id);
     }
 
+    public User(int age, String city, String contacts, String email, String firstName, String lastName, String username)
+    {
+        this.age = age;
+        this.city = city;
+        this.contacts = contacts;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+    }
+
     public String getFirstName() {
         return firstName;
     }

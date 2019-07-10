@@ -48,6 +48,7 @@ final class TaskListPresenter extends MvpPresenter<TaskListView> {
             public void onSuccess(Task result) {
                 view.hideProgress();
                 //TO DO Show card of task
+                view.openFullTaskCard();
             }
 
             @Override

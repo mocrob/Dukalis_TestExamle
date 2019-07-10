@@ -103,4 +103,32 @@ final class TaskListPresenter extends MvpPresenter<TaskListView> {
             }
         });
     }
+    public void createTask(Task task)
+    {
+        interactor.createTask(task, new Carry<Task>(){
+            @Override
+            public void onSuccess(Task result) {
+                view.showSuccess();
+            }
+
+            @Override
+            public void onFailure(Throwable throwable) {
+                view.showError("");
+            }
+        });
+    }
+
+    public void applyTask(Task task){
+        interactor.applyTask(String.valueOf(task.getId()), new Carry<Task>() {
+            @Override
+            public void onSuccess(Task result) {
+
+            }
+
+            @Override
+            public void onFailure(Throwable throwable) {
+                view.showError("");
+            }
+        });
+    }
 }

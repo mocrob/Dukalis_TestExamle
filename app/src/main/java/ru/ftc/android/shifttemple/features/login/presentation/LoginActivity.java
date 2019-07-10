@@ -18,7 +18,6 @@ import ru.ftc.android.shifttemple.R;
 import ru.ftc.android.shifttemple.features.BaseActivity;
 import ru.ftc.android.shifttemple.features.MvpPresenter;
 import ru.ftc.android.shifttemple.features.MvpView;
-import ru.ftc.android.shifttemple.features.books.presentation.BookActivity;
 import ru.ftc.android.shifttemple.features.login.domain.model.User;
 import ru.ftc.android.shifttemple.features.tasks.presentation.TaskActivity;
 
@@ -84,6 +83,11 @@ public final class LoginActivity extends BaseActivity implements LoginView {
     @Override
     public void openCreateUserScreen() {
         CreateUserActivity.start(this);
+    }
+
+    @Override
+    public void showError() {
+
     }
 
     @Override

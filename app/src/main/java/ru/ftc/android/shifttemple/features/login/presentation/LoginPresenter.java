@@ -46,4 +46,18 @@ public final class LoginPresenter extends MvpPresenter<LoginView> {
             view.openTaskListScreen(selectedUser);
         }
     }
+
+    public void createUser(User user){
+        userInteractor.createUser(user, new Carry<User>() {
+            @Override
+            public void onSuccess(User result) {
+
+            }
+
+            @Override
+            public void onFailure(Throwable throwable) {
+                view.showError();
+            }
+        });
+    }
 }

@@ -121,4 +121,9 @@ public final class TaskActivity extends BaseActivity implements TaskListView {
     public void openFullTaskCard(Task task) {
         ShowTaskActivity.start(this, task);
     }
+
+    @Override
+    public void showSuccess() {
+
+    }
 }

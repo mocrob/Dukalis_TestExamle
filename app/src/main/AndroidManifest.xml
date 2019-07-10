@@ -20,7 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".features.books.presentation.BookActivity" />
         <activity android:name=".features.tasks.presentation.TaskActivity" />
         <activity android:name=".features.login.presentation.CreateUserActivity" />
     </application>

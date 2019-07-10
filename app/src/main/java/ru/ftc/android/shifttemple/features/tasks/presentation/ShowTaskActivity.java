@@ -9,13 +9,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import ru.ftc.android.shifttemple.R;
 import ru.ftc.android.shifttemple.features.BaseActivity;
 import ru.ftc.android.shifttemple.features.MvpPresenter;
 import ru.ftc.android.shifttemple.features.MvpView;
 import ru.ftc.android.shifttemple.features.tasks.domain.model.Task;
 
-public class ShowTaskActivity extends BaseActivity implements ShowTaskView {
+public class ShowTaskActivity extends BaseActivity implements TaskListView {
 
 
 
@@ -26,8 +28,7 @@ public class ShowTaskActivity extends BaseActivity implements ShowTaskView {
 
 
     }
-    private ShowTaskPresenter presenter;
-    //private TaskListPresenter presenter;
+    private TaskListPresenter presenter;
 
 
     @Override
@@ -67,8 +68,8 @@ public class ShowTaskActivity extends BaseActivity implements ShowTaskView {
         });
     }
     @Override
-    protected MvpPresenter<ShowTaskView> getPresenter() {
-        presenter = ShowTaskPresenterFactory.createPresenter(this);
+    protected MvpPresenter<TaskListView> getPresenter() {
+        presenter = PresenterFactory.createPresenter(this);
         return presenter;
     }
 
@@ -77,8 +78,39 @@ public class ShowTaskActivity extends BaseActivity implements ShowTaskView {
         return this;
     }
 
+
     @Override
-    public void showError() {
-        Toast.makeText(this,"Empty field", Toast.LENGTH_LONG);
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void showTaskList(List<Task> list) {
+
+    }
+
+    @Override
+    public void showError(String message) {
+
+    }
+
+    @Override
+    public void openCreateTaskScreen() {
+
+    }
+
+    @Override
+    public void openFullTaskCard(Task task) {
+
+    }
+
+    @Override
+    public void showSuccess() {
+
     }
 }

@@ -8,13 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 import ru.ftc.android.shifttemple.R;
 import ru.ftc.android.shifttemple.features.BaseActivity;
 import ru.ftc.android.shifttemple.features.MvpPresenter;
 import ru.ftc.android.shifttemple.features.MvpView;
 import ru.ftc.android.shifttemple.features.login.domain.model.User;
 
-public final class CreateUserActivity extends BaseActivity implements CreateUserView{
+public final class CreateUserActivity extends BaseActivity implements LoginView{
 
     public static void start(final Context context){
         Intent intent = new Intent(context, CreateUserActivity.class);
@@ -30,7 +32,7 @@ public final class CreateUserActivity extends BaseActivity implements CreateUser
     private EditText usernameText;
     private Button createUserButton;
 
-    private CreateUserPresenter presenter;
+    private LoginPresenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -65,8 +67,8 @@ public final class CreateUserActivity extends BaseActivity implements CreateUser
         });
     }
     @Override
-    protected  MvpPresenter<CreateUserView> getPresenter() {
-        presenter = CreateUserPresenterFactory.createPresenter(this);
+    protected  MvpPresenter<LoginView> getPresenter() {
+        presenter = PresenterFactory.createPresenter(this);
         return presenter;
     }
 
@@ -75,8 +77,34 @@ public final class CreateUserActivity extends BaseActivity implements CreateUser
         return this;
     }
 
+
+    @Override
+    public void showUserList(List<User> userList) {
+
+    }
+
+    @Override
+    public void openBookListScreen() {
+
+    }
+
+    @Override
+    public void openTaskListScreen(User user) {
+
+    }
+
+    @Override
+    public void showNotSelectedUserError() {
+
+    }
+
+    @Override
+    public void openCreateUserScreen() {
+
+    }
+
     @Override
     public void showError() {
-        Toast.makeText(this,"Some ERROR", Toast.LENGTH_LONG);
+
     }
 }

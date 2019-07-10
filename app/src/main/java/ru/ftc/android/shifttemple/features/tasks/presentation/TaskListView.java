@@ -17,5 +17,5 @@ public interface TaskListView extends MvpView {
 
     void openCreateTaskScreen();
 
-    void openFullTaskCard();
+    void openFullTaskCard(Task task);
 }

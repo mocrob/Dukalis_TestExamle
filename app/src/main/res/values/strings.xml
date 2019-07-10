@@ -15,5 +15,6 @@
     <string name="lastnamePlaceText">Фамилия</string>
     <string name="usernamePlaceText">Логин</string>
     <string name="CreateNewUserText">Регистрация</string>
+    <string name="updateDateTimeText">DateTime</string>
     <string name="not_selected_user_error">Выберите пользователя</string>
 </resources>

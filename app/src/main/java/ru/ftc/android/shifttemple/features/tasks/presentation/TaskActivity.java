@@ -21,12 +21,14 @@ import ru.ftc.android.shifttemple.R;
 import ru.ftc.android.shifttemple.features.BaseActivity;
 import ru.ftc.android.shifttemple.features.MvpPresenter;
 import ru.ftc.android.shifttemple.features.MvpView;
+import ru.ftc.android.shifttemple.features.login.domain.model.User;
 import ru.ftc.android.shifttemple.features.tasks.domain.model.Task;
 
 public final class TaskActivity extends BaseActivity implements TaskListView {
 
-    public static void start(final Context context){
+    public static void start(final Context context, User user){
         Intent intent = new Intent(context, TaskActivity.class);
+        intent.putExtra(Intent.EXTRA_TEXT,user.getCity());
         context.startActivity(intent);
     }
 
@@ -34,6 +36,7 @@ public final class TaskActivity extends BaseActivity implements TaskListView {
     private RecyclerView recyclerView;
     private Button createTaskButton;
     private TaskAdapter adapter;
+    //private String activeUserCity;
 
     private TaskListPresenter presenter;
 

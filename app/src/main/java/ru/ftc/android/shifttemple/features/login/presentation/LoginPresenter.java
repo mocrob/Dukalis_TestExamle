@@ -43,7 +43,7 @@ public final class LoginPresenter extends MvpPresenter<LoginView> {
             view.showNotSelectedUserError();
         } else {
             sessionInteractor.setSessionId(String.valueOf(selectedUser.getId()));
-            view.openTaskListScreen();
+            view.openTaskListScreen(selectedUser);
         }
     }
 }

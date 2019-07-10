@@ -15,15 +15,17 @@ import ru.ftc.android.shifttemple.R;
 import ru.ftc.android.shifttemple.features.BaseActivity;
 import ru.ftc.android.shifttemple.features.MvpPresenter;
 import ru.ftc.android.shifttemple.features.MvpView;
+import ru.ftc.android.shifttemple.features.login.domain.model.User;
 import ru.ftc.android.shifttemple.features.tasks.domain.TasksInteractor;
 import ru.ftc.android.shifttemple.features.tasks.domain.model.Task;
 
 
 public final class CreateTaskActivity extends BaseActivity implements TaskListView {
 
-    public static void start(final Context context){
+    public static void start(final Context context, User user){
         Intent intent = new Intent(context, CreateTaskActivity.class);
         context.startActivity(intent);
+        fillUser(user);
     }
     private TaskListPresenter presenter;
 
@@ -31,6 +33,11 @@ public final class CreateTaskActivity extends BaseActivity implements TaskListVi
     private EditText fullDesc;
     private Button createButton;
 
+    private static User user;
+
+    public static void fillUser(User users) {
+        user=users;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +55,7 @@ public final class CreateTaskActivity extends BaseActivity implements TaskListVi
             @Override
             public void onClick(View view) {
 
-                Task task = new Task(String.valueOf(shortDesc.getText()),String.valueOf(fullDesc.getText()),Intent.EXTRA_TEXT);
+                Task task = new Task(String.valueOf(shortDesc.getText()),String.valueOf(fullDesc.getText()),String.valueOf(user.getCity()));
                 presenter.createTask(task);
                 shortDesc.setText("");
                 fullDesc.setText("");

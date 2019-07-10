@@ -28,8 +28,8 @@ public final class TaskActivity extends BaseActivity implements TaskListView {
 
     public static void start(final Context context, User user){
         Intent intent = new Intent(context, TaskActivity.class);
-        intent.putExtra(Intent.EXTRA_TEXT,user.getCity());
         context.startActivity(intent);
+        fillUser(user);
     }
 
     private ProgressBar progressBar;
@@ -39,6 +39,12 @@ public final class TaskActivity extends BaseActivity implements TaskListView {
     //private String activeUserCity;
 
     private TaskListPresenter presenter;
+
+    private static User user;
+
+    public static void fillUser(User users){
+        user = users;
+    }
 
     @Override
     protected  void onCreate(Bundle savedInstanceState) {
@@ -114,7 +120,7 @@ public final class TaskActivity extends BaseActivity implements TaskListView {
 
     @Override
     public void openCreateTaskScreen() {
-        CreateTaskActivity.start(this);
+        CreateTaskActivity.start(this, user);
     }
 
     @Override

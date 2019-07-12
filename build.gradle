@@ -2,7 +2,7 @@
 
 buildscript {
 
-    ext.gradleVersion = '3.4.1'
+    ext.gradleVersion = '3.4.2'
 
     repositories {
         google()
